@@ -1,0 +1,17 @@
+<h1>Weather2#index</h1>
+<p>Find me in app/views/weather2/index.html.erb</p>
+
+<!-- app/views/your_controller/submit_params.html.erb -->
+<h1>Submit Parameters</h1>
+
+<%= form_with(url: { controller: 'weather2', action: 'retrieve' }, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :param_name %>
+    <%= form.text_field :param_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Submit' %>
+  </div>
+<% end %>
+
