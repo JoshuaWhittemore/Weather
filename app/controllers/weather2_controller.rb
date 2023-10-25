@@ -7,7 +7,6 @@ class Weather2Controller < ApplicationController
     puts "Weather2Controller#retrieve is executing"
 
     redirect_to weather2_show_url
-
   end
 
   def show
