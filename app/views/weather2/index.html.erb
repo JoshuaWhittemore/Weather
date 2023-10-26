@@ -1,15 +1,10 @@
-<h1>Weather2#index</h1>
-<p>Find me in app/views/weather2/index.html.erb</p>
-
-<!-- app/views/your_controller/submit_params.html.erb -->
-<h1>Submit Parameters</h1>
-
+<h1>Local Weather</h1>
 <%= form_with(url: { controller: 'weather2', action: 'retrieve' }, local: true) do |form| %>
   <div class="field">
 
-    
-    <%= form.label :zip %>
-    <%= form.text_field :zip %>
+    <%# I borrowed this prompt verbiage from https://www.weather.gov/ %>
+    <%= form.label 'Local forecast by "City, St" or ZIP code:' %><br />
+    <%= form.text_field :location_text %>
   </div>
 
   <div class="actions">
