@@ -43,8 +43,8 @@ end
       <td>
         <h4><%= extract_weekday(day) %></h4>
         <img src=<%= "#{extract_icon(day)}"  %> ><br />
-        High <%= day.dig('temp', 'min').to_i %>°<br />
-        Low <%= day.dig('temp', 'max').to_i %>°<br />
+        Low <%= day.dig('temp', 'min').to_i %>°<br />
+        High <%= day.dig('temp', 'max').to_i %>°<br />
 
       <td />
     <% end %>
@@ -52,6 +52,7 @@ end
 <table />
 
 
+Cache Hit: <%= @cache_hit.to_s %>
 
 
 <%# >> @forecast.dig('daily', 0)
