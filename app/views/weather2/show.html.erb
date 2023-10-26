@@ -1,14 +1,17 @@
-<h2>Current Weather in <%= @current_weather["name"] %></h2>
+
+<h2><%= @result[:display_name] %></h2>
+
 
 <%
 
+
 def extract_weekday(day)
-  datetime = DateTime.parse(day.dig('dt'))
+  datetime = DateTime.parse(day.dig(:dt))
   datetime.strftime("%a")
 end
 
 def extract_icon(day)
-  day.dig('weather', 0, "icon_uri")
+  day.dig(:weather, 0, :icon_uri)
 end
 
 def local_datetime(utc_dt_str, timezone)
@@ -17,239 +20,33 @@ def local_datetime(utc_dt_str, timezone)
   parsed_datetime.in_time_zone(desired_time_zone)
 end
 
+now = @weather.dig(:current)
 %>
 
 
-<%= local_datetime(@current_weather.dig('dt'), @current_weather.dig('timezone').to_i ).strftime("%A %I:%M %p") %><br />
+<h3>Current Weather</h3>
+<%= local_datetime(now[:dt], @weather[:timezone]).strftime("%A %l:%M %p") %><br />
+<%= now.dig(:weather, 0, :description).humanize %>
+<img src=<%= "#{extract_icon(now)}"  %> ></br />
 
+<%= "Temperature: #{now[:temp].to_i} °F"  %><br />
+<%= "Humidity: #{now[:humidity].to_i}%"  %><br />
+<%= "Wind: #{now[:wind_speed].to_i} mph"  %><br />
 
-<%= "#{@current_weather.dig('weather', 0, 'description').humanize}"  %><br />
-<img src=<%= "#{@current_weather.dig('weather', 0, 'icon_uri')}"  %> ></br />
-<%= "Temperature: #{@current_weather.dig('main', 'temp').to_i} °F"  %><br />
-<%= "Humidity: #{@current_weather.dig('main', 'humidity')}%"  %><br />
-<%= "Wind: #{@current_weather.dig('wind', 'speed').to_i} mph"  %><br />
+<hr />
 
+<h3>Forecast</h3>
+<% day = @weather.dig(:daily, 0) %>
 
-
-<br />
-<h2>Forecast</h2>
-
-
-<%# <% day = @forecast.dig('daily', 0) %>
-
-<table>
+ <table>
   <tr>
-    <% @forecast['daily'].each do |day| %>
+    <% @weather[:daily].each do |day| %>
       <td>
         <h4><%= extract_weekday(day) %></h4>
         <img src=<%= "#{extract_icon(day)}"  %> ><br />
-        Low <%= day.dig('temp', 'min').to_i %>°<br />
-        High <%= day.dig('temp', 'max').to_i %>°<br />
-
+        Low <%= day.dig(:temp, :min).to_i %>°<br />
+        High <%= day.dig(:temp, :max).to_i %>°<br />
       <td />
     <% end %>
   <tr />
 <table />
-
-
-Cache Hit: <%= @cache_hit.to_s %>
-
-
-<%# >> @forecast.dig('daily', 0)
-=>
-{"dt"=>2023-10-26 19:00:00 UTC,
- "sunrise"=>2023-10-26 14:12:19 UTC,
- "sunset"=>2023-10-27 00:44:54 UTC,
- "temp"=>{"day"=>42.28, "min"=>36.14, "max"=>47.61, "night"=>40.93, "eve"=>42.94, "morn"=>36.68},
- "feels_like"=>{"day"=>36.63, "night"=>37.18, "eve"=>39.72, "morn"=>32.22},
- "pressure"=>1022,
- "humidity"=>61,
- "dew_point"=>30.07,
- "wind_speed"=>9.91,
- "wind_deg"=>307,
- "wind_gust"=>14.85,
- "weather"=>
-  [{"icon_uri"=>#<URI::HTTP http://openweathermap.org/img/wn/04d@2x.png>,
-    "icon"=>"04d",
-    "id"=>803,
-    "main"=>"Clouds",
-    "description"=>"broken clouds"}],
- "clouds"=>54,
- "uvi"=>2.5}
- %>
-
-
-
-
-<%# 
-{"lat"=>43.5885,
- "lon"=>-116.191,
- "timezone"=>"America/Boise",
- "current"=>
-  {"dt"=>"2023-10-26T03:16:27.000Z",
-   "sunrise"=>"2023-10-25T14:11:02.000Z",
-   "sunset"=>"2023-10-26T00:46:24.000Z",
-   "temp"=>39.81,
-   "feels_like"=>39.81,
-   "pressure"=>1012,
-   "humidity"=>92,
-   "dew_point"=>37.69,
-   "uvi"=>0,
-   "clouds"=>66,
-   "visibility"=>10000,
-   "wind_speed"=>2.01,
-   "wind_deg"=>279,
-   "wind_gust"=>5.46,
-   "weather"=>
-    [{"icon_uri"=>"http://openweathermap.org/img/wn/04n@2x.png",
-      "icon"=>"04n",
-      "id"=>803,
-      "main"=>"Clouds",
-      "description"=>"broken clouds"}]},
- "minutely"=>nil,
- "hourly"=>nil,
- "daily"=>
-
-
-
-  [{"dt"=>"2023-10-25T19:00:00.000Z",
-    "sunrise"=>"2023-10-25T14:11:02.000Z",
-    "sunset"=>"2023-10-26T00:46:24.000Z",
-    "temp"=>{"day"=>53.76, "min"=>39.81, "max"=>57.83, "night"=>41.22, "eve"=>42.51, "morn"=>48.33},
-    "feels_like"=>{"day"=>51.66, "night"=>38.12, "eve"=>38.35, "morn"=>48.33},
-    "pressure"=>1008,
-    "humidity"=>60,
-    "dew_point"=>38.77,
-    "wind_speed"=>16.15,
-    "wind_deg"=>276,
-    "wind_gust"=>23.11,
-    "weather"=>
-     [{"icon_uri"=>"http://openweathermap.org/img/wn/10d@2x.png",
-       "icon"=>"10d",
-       "id"=>502,
-       "main"=>"Rain",
-       "description"=>"heavy intensity rain"}],
-    "clouds"=>82,
-    "rain"=>11.47,
-    "uvi"=>1.43},
-
-
-
-
-   {"dt"=>"2023-10-26T19:00:00.000Z",
-    "sunrise"=>"2023-10-26T14:12:19.000Z",
-    "sunset"=>"2023-10-27T00:44:54.000Z",
-    "temp"=>{"day"=>44.71, "min"=>35.19, "max"=>47.26, "night"=>41.11, "eve"=>42.15, "morn"=>35.74},
-    "feels_like"=>{"day"=>38.86, "night"=>38.62, "eve"=>38.62, "morn"=>30.09},
-    "pressure"=>1022,
-    "humidity"=>51,
-    "dew_point"=>26.06,
-    "wind_speed"=>12.08,
-    "wind_deg"=>306,
-    "wind_gust"=>17.4,
-    "weather"=>
-     [{"icon_uri"=>"http://openweathermap.org/img/wn/02d@2x.png",
-       "icon"=>"02d",
-       "id"=>801,
-       "main"=>"Clouds",
-       "description"=>"few clouds"}],
-    "clouds"=>22,
-    "uvi"=>2.5},
-   {"dt"=>"2023-10-27T19:00:00.000Z",
-    "sunrise"=>"2023-10-27T14:13:36.000Z",
-    "sunset"=>"2023-10-28T00:43:26.000Z",
-    "temp"=>{"day"=>46.53, "min"=>36.36, "max"=>48.83, "night"=>36.63, "eve"=>42.73, "morn"=>37.2},
-    "feels_like"=>{"day"=>43.18, "night"=>30.96, "eve"=>37.11, "morn"=>37.2},
-    "pressure"=>1022,
-    "humidity"=>41,
-    "dew_point"=>22.78,
-    "wind_speed"=>11.36,
-    "wind_deg"=>313,
-    "wind_gust"=>16.71,
-    "weather"=>
-     [{"icon_uri"=>"http://openweathermap.org/img/wn/01d@2x.png", "icon"=>"01d", "id"=>800, "main"=>"Clear", "description"=>"clear sky"}],
-    "clouds"=>2,
-    "uvi"=>2.69},
-   {"dt"=>"2023-10-28T19:00:00.000Z",
-    "sunrise"=>"2023-10-28T14:14:54.000Z",
-    "sunset"=>"2023-10-29T00:42:00.000Z",
-    "temp"=>{"day"=>38.28, "min"=>28.4, "max"=>44.04, "night"=>36.21, "eve"=>43.27, "morn"=>29.12},
-    "feels_like"=>{"day"=>32, "night"=>33.62, "eve"=>38.86, "morn"=>20.26},
-    "pressure"=>1032,
-    "humidity"=>42,
-    "dew_point"=>15.48,
-    "wind_speed"=>10.65,
-    "wind_deg"=>311,
-    "wind_gust"=>16.49,
-    "weather"=>
-     [{"icon_uri"=>"http://openweathermap.org/img/wn/01d@2x.png", "icon"=>"01d", "id"=>800, "main"=>"Clear", "description"=>"clear sky"}],
-    "clouds"=>3,
-    "uvi"=>2.47},
-   {"dt"=>"2023-10-29T19:00:00.000Z",
-    "sunrise"=>"2023-10-29T14:16:12.000Z",
-    "sunset"=>"2023-10-30T00:40:34.000Z",
-    "temp"=>{"day"=>43.61, "min"=>33.24, "max"=>47.46, "night"=>40.01, "eve"=>45.45, "morn"=>33.24},
-    "feels_like"=>{"day"=>40.51, "night"=>38.3, "eve"=>45.45, "morn"=>33.24},
-    "pressure"=>1034,
-    "humidity"=>31,
-    "dew_point"=>13.66,
-    "wind_speed"=>5.28,
-    "wind_deg"=>171,
-    "wind_gust"=>5.14,
-    "weather"=>
-     [{"icon_uri"=>"http://openweathermap.org/img/wn/01d@2x.png", "icon"=>"01d", "id"=>800, "main"=>"Clear", "description"=>"clear sky"}],
-    "clouds"=>0,
-    "uvi"=>2.54},
-   {"dt"=>"2023-10-30T19:00:00.000Z",
-    "sunrise"=>"2023-10-30T14:17:30.000Z",
-    "sunset"=>"2023-10-31T00:39:10.000Z",
-    "temp"=>{"day"=>48.81, "min"=>37.49, "max"=>53.19, "night"=>43.39, "eve"=>49.91, "morn"=>37.49},
-    "feels_like"=>{"day"=>48.81, "night"=>43.39, "eve"=>48.92, "morn"=>33.82},
-    "pressure"=>1026,
-    "humidity"=>25,
-    "dew_point"=>13.42,
-    "wind_speed"=>5.73,
-    "wind_deg"=>87,
-    "wind_gust"=>5.41,
-    "weather"=>
-     [{"icon_uri"=>"http://openweathermap.org/img/wn/04d@2x.png",
-       "icon"=>"04d",
-       "id"=>803,
-       "main"=>"Clouds",
-       "description"=>"broken clouds"}],
-    "clouds"=>53,
-    "uvi"=>3},
-   {"dt"=>"2023-10-31T19:00:00.000Z",
-    "sunrise"=>"2023-10-31T14:18:49.000Z",
-    "sunset"=>"2023-11-01T00:37:48.000Z",
-    "temp"=>{"day"=>50.16, "min"=>38.34, "max"=>56.28, "night"=>46.49, "eve"=>52.56, "morn"=>38.37},
-    "feels_like"=>{"day"=>46.15, "night"=>44.49, "eve"=>48.83, "morn"=>35.11},
-    "pressure"=>1024,
-    "humidity"=>27,
-    "dew_point"=>16.2,
-    "wind_speed"=>5.12,
-    "wind_deg"=>102,
-    "wind_gust"=>7.2,
-    "weather"=>
-     [{"icon_uri"=>"http://openweathermap.org/img/wn/01d@2x.png", "icon"=>"01d", "id"=>800, "main"=>"Clear", "description"=>"clear sky"}],
-    "clouds"=>0,
-    "uvi"=>3},
-   {"dt"=>"2023-11-01T19:00:00.000Z",
-    "sunrise"=>"2023-11-01T14:20:07.000Z",
-    "sunset"=>"2023-11-02T00:36:26.000Z",
-    "temp"=>{"day"=>52.72, "min"=>40.84, "max"=>58.95, "night"=>49.77, "eve"=>54.72, "morn"=>40.84},
-    "feels_like"=>{"day"=>48.87, "night"=>48.54, "eve"=>51.21, "morn"=>38.14},
-    "pressure"=>1020,
-    "humidity"=>25,
-    "dew_point"=>16.92,
-    "wind_speed"=>7.65,
-    "wind_deg"=>158,
-    "wind_gust"=>10.89,
-    "weather"=>
-     [{"icon_uri"=>"http://openweathermap.org/img/wn/04d@2x.png",
-       "icon"=>"04d",
-       "id"=>803,
-       "main"=>"Clouds",
-       "description"=>"broken clouds"}],
-    "clouds"=>63,
-    "uvi"=>3}]} %>
