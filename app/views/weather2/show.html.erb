@@ -1,12 +1,7 @@
 <h2>Current Weather in <%= @current_weather["name"] %></h2>
 
-<%= "#{@current_weather.dig('weather', 0, 'main')}"  %><br />
-<img src=<%= "#{@current_weather.dig('weather', 0, 'icon_uri')}"  %> ></br />
-<%= "Temperature: #{@current_weather.dig('main', 'temp').to_i} °F"  %><br />
-<%= "Humidity: #{@current_weather.dig('main', 'humidity')} %"  %><br />
-<%= "Wind: #{@current_weather.dig('wind', 'speed')} mph"  %><br />
-
 <%
+
 def extract_weekday(day)
   datetime = DateTime.parse(day.dig('dt'))
   datetime.strftime("%a")
@@ -16,7 +11,25 @@ def extract_icon(day)
   day.dig('weather', 0, "icon_uri")
 end
 
+def local_datetime(utc_dt_str, timezone)
+  parsed_datetime = DateTime.parse(utc_dt_str)
+  desired_time_zone = ActiveSupport::TimeZone[timezone]
+  parsed_datetime.in_time_zone(desired_time_zone)
+end
+
 %>
+
+
+<%= local_datetime(@current_weather.dig('dt'), @current_weather.dig('timezone').to_i ).strftime("%A %I:%M %p") %><br />
+
+
+<%= "#{@current_weather.dig('weather', 0, 'description').humanize}"  %><br />
+<img src=<%= "#{@current_weather.dig('weather', 0, 'icon_uri')}"  %> ></br />
+<%= "Temperature: #{@current_weather.dig('main', 'temp').to_i} °F"  %><br />
+<%= "Humidity: #{@current_weather.dig('main', 'humidity')} %"  %><br />
+<%= "Wind: #{@current_weather.dig('wind', 'speed')} mph"  %><br />
+
+
 
 <br />
 <h2>Forecast</h2>
