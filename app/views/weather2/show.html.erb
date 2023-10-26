@@ -26,8 +26,8 @@ end
 <%= "#{@current_weather.dig('weather', 0, 'description').humanize}"  %><br />
 <img src=<%= "#{@current_weather.dig('weather', 0, 'icon_uri')}"  %> ></br />
 <%= "Temperature: #{@current_weather.dig('main', 'temp').to_i} °F"  %><br />
-<%= "Humidity: #{@current_weather.dig('main', 'humidity')} %"  %><br />
-<%= "Wind: #{@current_weather.dig('wind', 'speed')} mph"  %><br />
+<%= "Humidity: #{@current_weather.dig('main', 'humidity')}%"  %><br />
+<%= "Wind: #{@current_weather.dig('wind', 'speed').to_i} mph"  %><br />
 
 
 
