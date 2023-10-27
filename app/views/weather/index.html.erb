@@ -2,9 +2,7 @@
 
 <%= form_with url: weather_show_path, local: true, method: :get do |form| %>
   <div class="field">
-
-    <%# I borrowed this prompt verbiage from https://www.weather.gov/ %>
-    <%= form.label 'Local forecast by "City, St" or ZIP code:' %><br />
+    <%= form.label 'Local forecast by "City", "City, St" or ZIP code:' %><br />
     <%= form.text_field :location %>
   </div>
 

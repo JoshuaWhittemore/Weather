@@ -1,9 +1,7 @@
-class WeatherController < ApplicationController
-  # def input
-  # end
+# This controller is very powerful - it can control the weather!
 
-  # def display
-  # end
+class WeatherController < ApplicationController
+  include WeatherHelper
 
   def index
   end
