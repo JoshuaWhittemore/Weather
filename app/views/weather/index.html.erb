@@ -1,3 +1,5 @@
+<div class="container">
+
 <h1>Local Weather</h1>
 
 <%= form_with url: weather_show_path, local: true, method: :get do |form| %>
@@ -16,4 +18,6 @@
     <%= flash[:alert] %>
   </div>
 <% end %>
+
+</div>
 
