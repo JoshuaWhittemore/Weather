@@ -17,6 +17,14 @@ class WeatherController < ApplicationController
     results.select! { |result| result.country == 'United States' }
 
     # if no results for US, flash back to index.
+    if results.any?
+      flash[:notice] = "Location found for input '#{location_text}'."
+    else
+      flash[:alert] = "No valid location found for input '#{location_text}'."
+      redirect_to action: :index
+      return
+    end
+
     # Take the first result, which I think will be the most specific.
     result = results.first
 

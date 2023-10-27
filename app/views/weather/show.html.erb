@@ -20,11 +20,7 @@
   <tr>
     <% @weather[:daily].each do |day| %>
       <td>
-        <h4><%= extract_weekday(day) %></h4>
-        <%= day.dig(:weather, 0, :description).humanize %><br />
-        <img src=<%= "#{extract_icon(day)}"  %> ><br />
-        Low <%= day.dig(:temp, :min).to_i %>°<br />
-        High <%= day.dig(:temp, :max).to_i %>°<br />
+        <%= render 'day', day: day %>
       <td />
     <% end %>
   <tr />
