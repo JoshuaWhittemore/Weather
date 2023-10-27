@@ -1,0 +1,109 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=Sacramento,%20CA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 27 Oct 2023 14:39:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1208'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjMxMDQ4ODc4MiwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6InJlbGF0aW9uIiwib3NtX2lkIjo2MjMyOTQwLCJsYXQiOiIzOC41ODEwNjA2IiwibG9uIjoiLTEyMS40OTM4OTUiLCJjbGFzcyI6ImJvdW5kYXJ5IiwidHlwZSI6ImFkbWluaXN0cmF0aXZlIiwicGxhY2VfcmFuayI6MTYsImltcG9ydGFuY2UiOjAuNjI0MzAwOTAyMDU5NjAyOCwiYWRkcmVzc3R5cGUiOiJjaXR5IiwibmFtZSI6IlNhY3JhbWVudG8iLCJkaXNwbGF5X25hbWUiOiJTYWNyYW1lbnRvLCBTYWNyYW1lbnRvIENvdW50eSwgQ2FsaWZvcm5pYSwgVW5pdGVkIFN0YXRlcyIsImFkZHJlc3MiOnsiY2l0eSI6IlNhY3JhbWVudG8iLCJjb3VudHkiOiJTYWNyYW1lbnRvIENvdW50eSIsInN0YXRlIjoiQ2FsaWZvcm5pYSIsIklTTzMxNjYtMi1sdmw0IjoiVVMtQ0EiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn0sImJvdW5kaW5nYm94IjpbIjM4LjQzNzU3NDAiLCIzOC42ODU1MDYwIiwiLTEyMS41NjAxMjAwIiwiLTEyMS4zNjI3NDAwIl19LHsicGxhY2VfaWQiOjMxMDM0NDk4NSwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6InJlbGF0aW9uIiwib3NtX2lkIjozOTY0NjAsImxhdCI6IjM4LjQ3MzIyNTkiLCJsb24iOiItMTIxLjI5ODA3MDciLCJjbGFzcyI6ImJvdW5kYXJ5IiwidHlwZSI6ImFkbWluaXN0cmF0aXZlIiwicGxhY2VfcmFuayI6MTIsImltcG9ydGFuY2UiOjAuNTUxMzcwNDk0MDI2NDgyNiwiYWRkcmVzc3R5cGUiOiJjb3VudHkiLCJuYW1lIjoiU2FjcmFtZW50byBDb3VudHkiLCJkaXNwbGF5X25hbWUiOiJTYWNyYW1lbnRvIENvdW50eSwgQ2FsaWZvcm5pYSwgVW5pdGVkIFN0YXRlcyIsImFkZHJlc3MiOnsiY291bnR5IjoiU2FjcmFtZW50byBDb3VudHkiLCJzdGF0ZSI6IkNhbGlmb3JuaWEiLCJJU08zMTY2LTItbHZsNCI6IlVTLUNBIiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJjb3VudHJ5X2NvZGUiOiJ1cyJ9LCJib3VuZGluZ2JveCI6WyIzOC4wMTgyNjk3IiwiMzguNzM2MzUwMiIsIi0xMjEuODYyODA1MyIsIi0xMjEuMDI3MDgzMCJdfV0=
+  recorded_at: Fri, 27 Oct 2023 14:39:25 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/onecall?appid=9a48e3030902fa5c8f3e224b607be7e1&exclude=minutely,hourly&lat=38.5810606&lon=-121.493895&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenWeather Ruby Client/0.4.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Fri, 27 Oct 2023 14:39:26 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '5955'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/onecall?exclude=minutely%2Chourly&lat=38.58&lon=-121.49&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"lat":38.5811,"lon":-121.4939,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1698417566,"sunrise":1698416822,"sunset":1698455546,"temp":39.81,"feels_like":36.57,"pressure":1019,"humidity":95,"dew_point":38.5,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":4.61,"wind_deg":130,"weather":[{"id":741,"main":"Fog","description":"fog","icon":"50d"}]},"daily":[{"dt":1698433200,"sunrise":1698416822,"sunset":1698455546,"moonrise":1698453600,"moonset":1698411720,"moon_phase":0.46,"temp":{"day":57.38,"min":39.81,"max":67.44,"night":51.87,"eve":61.14,"morn":42.76},"feels_like":{"day":54.84,"night":49.24,"eve":58.05,"morn":42.76},"pressure":1020,"humidity":43,"dew_point":35.1,"wind_speed":4.99,"wind_deg":228,"wind_gust":8.32,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":1,"pop":0,"uvi":3.4},{"dt":1698519600,"sunrise":1698503286,"sunset":1698541873,"moonrise":1698541680,"moonset":1698502560,"moon_phase":0.5,"temp":{"day":61.39,"min":45.75,"max":72.09,"night":55.11,"eve":66.24,"morn":46.45},"feels_like":{"day":58.17,"night":50.99,"eve":63.03,"morn":44.22},"pressure":1020,"humidity":20,"dew_point":19.94,"wind_speed":19.62,"wind_deg":332,"wind_gust":36.82,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":3.4},{"dt":1698606000,"sunrise":1698589750,"sunset":1698628201,"moonrise":1698630060,"moonset":1698593400,"moon_phase":0.53,"temp":{"day":63.25,"min":44.89,"max":72.48,"night":53.83,"eve":64.33,"morn":45.77},"feels_like":{"day":59.83,"night":49.68,"eve":60.98,"morn":40.12},"pressure":1022,"humidity":12,"dew_point":9.07,"wind_speed":15.01,"wind_deg":348,"wind_gust":31.43,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":3.54},{"dt":1698692400,"sunrise":1698676215,"sunset":1698714531,"moonrise":1698718740,"moonset":1698684180,"moon_phase":0.57,"temp":{"day":60.08,"min":45.99,"max":69.46,"night":54.66,"eve":69.46,"morn":47.52},"feels_like":{"day":56.5,"night":50.58,"eve":66.61,"morn":45.61},"pressure":1021,"humidity":15,"dew_point":11.73,"wind_speed":4.61,"wind_deg":346,"wind_gust":5.35,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":3.34},{"dt":1698778800,"sunrise":1698762680,"sunset":1698800862,"moonrise":1698807840,"moonset":1698774780,"moon_phase":0.6,"temp":{"day":61.9,"min":47.84,"max":70.23,"night":55.94,"eve":69.49,"morn":49.15},"feels_like":{"day":58.53,"night":52.12,"eve":66.76,"morn":47.48},"pressure":1020,"humidity":16,"dew_point":15.21,"wind_speed":5.48,"wind_deg":345,"wind_gust":6.49,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"clouds":52,"pop":0,"uvi":4},{"dt":1698865200,"sunrise":1698849145,"sunset":1698887194,"moonrise":1698897360,"moonset":1698865020,"moon_phase":0.64,"temp":{"day":63.54,"min":48.92,"max":73.36,"night":58.1,"eve":73.09,"morn":50.32},"feels_like":{"day":60.39,"night":54.46,"eve":70.66,"morn":46.18},"pressure":1019,"humidity":17,"dew_point":17.94,"wind_speed":5.28,"wind_deg":340,"wind_gust":6.24,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":7,"pop":0,"uvi":4},{"dt":1698951600,"sunrise":1698935611,"sunset":1698973528,"moonrise":1698987240,"moonset":1698954720,"moon_phase":0.67,"temp":{"day":64.56,"min":51.78,"max":72.75,"night":53.98,"eve":68.45,"morn":52.61},"feels_like":{"day":61.47,"night":52.32,"eve":66.31,"morn":48.61},"pressure":1019,"humidity":16,"dew_point":17.35,"wind_speed":14.47,"wind_deg":330,"wind_gust":18.43,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":63,"pop":0.7,"rain":1.97,"uvi":4},{"dt":1699038000,"sunrise":1699022076,"sunset":1699059863,"moonrise":1699077300,"moonset":1699043820,"moon_phase":0.7,"temp":{"day":60.22,"min":49.68,"max":70.66,"night":59.41,"eve":70.66,"morn":49.78},"feels_like":{"day":58.82,"night":58.15,"eve":69.55,"morn":47.1},"pressure":1020,"humidity":61,"dew_point":46.76,"wind_speed":6.85,"wind_deg":347,"wind_gust":15.68,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":87,"pop":0,"uvi":4}],"alerts":[{"sender_name":"NWS
+        Sacramento (North Central California)","event":"Fire Weather Watch","start":1698494400,"end":1698624000,"description":"...FIRE
+        WEATHER WATCH REMAINS IN EFFECT FROM EARLY SATURDAY\nMORNING THROUGH SUNDAY
+        AFTERNOON FOR GUSTY WINDS AND LOW HUMIDITY\nFOR FIRE ZONES 213,215,216,217,218,219,220,263,266,267
+        AND 279...\n* Winds...North to east winds 15 to 25 mph with gusts up to 30
+        to\n40 mph. Local gusts to 55 mph or higher across exposed ridges in\nthe
+        northern Sierra.\n* Humidity...Minimum relative humidity as low as 10 to 20\npercent
+        on Saturday and Sunday. Poor relative humidity\nrecoveries in the 20 to 40
+        percent range overnight.\n* Highest Threat...Western portion of the Sacramento
+        Valley.\n* Impacts...The combination of gusty winds and low humidity can\ncause
+        fire to rapidly grow in size and intensity. Outdoor\nburning is not recommended\n*","tags":["Fire
+        warning"]},{"sender_name":"NWS Sacramento (North Central California)","event":"Wind
+        Advisory","start":1698505200,"end":1698613200,"description":"...WIND ADVISORY
+        IN EFFECT FROM 8 AM SATURDAY TO 2 PM PDT\nSUNDAY...\n* WHAT...Northerly winds
+        20-30 mph with gusts up to 45 mph over\nthe Sacramento Valley and Foothills.
+        East to northeast gusts up\nto 55 mph possible over the Sierra at higher elevations
+        and\nthrough gaps and canyons.\n* WHERE...Sacramento Valley, Northern San
+        Joaquin Valley, the\nSierra Nevada, and Southern Cascades.\n* WHEN...From
+        8 AM Saturday to 2 PM PDT Sunday.\n* IMPACTS...Gusty winds could blow around
+        unsecured objects.\nTree limbs could be blown down and a few power outages
+        may\nresult.\n* ADDITIONAL DETAILS...Fire weather watch is in effect for much
+        of\nthe advisory area. Outdoor burning is not recommended.","tags":["Wind"]}]}'
+  recorded_at: Fri, 27 Oct 2023 14:39:26 GMT
+recorded_with: VCR 6.2.0
