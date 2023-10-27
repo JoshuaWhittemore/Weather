@@ -14,14 +14,10 @@
 <hr />
 
 <h3>Forecast</h3>
-<% day = @weather.dig(:daily, 0) %>
-
- <table>
+<table>
   <tr>
     <% @weather[:daily].each do |day| %>
-      <td>
         <%= render 'day', day: day %>
-      <td />
     <% end %>
   <tr />
 <table />
