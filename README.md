@@ -28,19 +28,22 @@ The location can be entered in several ways, including:
 ## Test coverage
 * There is test coverage, although not as much as I would like.
 ```bash
-$ rails test -v
+(base) weather $ rails test -v
 Running 6 tests in a single process (parallelization threshold is 50)
-Run options: -v --seed 46809
+Run options: -v --seed 24026
 
 # Running:
 
-LocationServiceTest#test_finds_regular_address = 0.25 s = .
-LocationServiceTest#test_finds_by_zip_code_only = 0.01 s = .
+WeatherServiceTest#test_gets_weather_data = 0.22 s = .
+LocationServiceTest#test_finds_regular_address = 0.01 s = .
 LocationServiceTest#test_finds_by_city_and_state = 0.01 s = .
-WeatherServiceTest#test_gets_weather_data = 0.03 s = .
-WeatherControllerTest#test_should_get_show = 0.41 s = .
-WeatherControllerTest#test_should_get_index = 0.06 s = .
+LocationServiceTest#test_finds_by_zip_code_only = 0.01 s = .
+WeatherControllerTest#test_should_get_index = 0.34 s = .
+WeatherControllerTest#test_should_get_show = 0.03 s = .
 
+Finished in 0.621461s, 9.6547 runs/s, 19.3093 assertions/s.
+6 runs, 12 assertions, 0 failures, 0 errors, 0 skips
+(base) weather
 ```
 
 ## TODO
