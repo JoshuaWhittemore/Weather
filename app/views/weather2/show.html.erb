@@ -4,7 +4,6 @@
 
 <%
 
-
 def extract_weekday(day)
   datetime = DateTime.parse(day.dig(:dt))
   datetime.strftime("%a")
@@ -25,7 +24,7 @@ now = @weather.dig(:current)
 
 
 <h3>Current Weather</h3>
-<%= local_datetime(now[:dt], @weather[:timezone]).strftime("%A %l:%M %p") %><br />
+<%= local_datetime(now[:dt], @weather[:timezone]).strftime("%A %l:%M %p") %> <em>(local time)</em><br />
 <%= now.dig(:weather, 0, :description).humanize %>
 <img src=<%= "#{extract_icon(now)}"  %> ></br />
 
@@ -43,6 +42,7 @@ now = @weather.dig(:current)
     <% @weather[:daily].each do |day| %>
       <td>
         <h4><%= extract_weekday(day) %></h4>
+        <%= day.dig(:weather, 0, :description).humanize %><br />
         <img src=<%= "#{extract_icon(day)}"  %> ><br />
         Low <%= day.dig(:temp, :min).to_i %>°<br />
         High <%= day.dig(:temp, :max).to_i %>°<br />
@@ -50,3 +50,11 @@ now = @weather.dig(:current)
     <% end %>
   <tr />
 <table />
+
+<br />
+
+<% if @weather_cache_hit %>
+  <em>Weather data pulled from cache for place id <%= @result[:place_id] %>.</em>
+<% else %>
+  <em>Weather data _not_ pulled from cache for place id <%= @result[:place_id] %>.</em>
+<% end %>
