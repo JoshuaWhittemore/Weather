@@ -10,6 +10,11 @@ Once deployed, a user can enter a location into a form on the root page of the a
 ![Index Page](/images/index-page.png)
 
 
+2. App returns page with current weather at location and extended forecast.
+
+![Index Page](/images/show-page.png)
+
+
 The location can be entered in several ways, including:
 * a zip code, like '01770'
 * a city & state, like "New York, New York" or "New York NY", etc.
