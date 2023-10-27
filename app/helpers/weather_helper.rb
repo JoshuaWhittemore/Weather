@@ -1,10 +1,9 @@
 module WeatherHelper
-
   def extract_weekday(day)
     datetime = DateTime.parse(day.dig(:dt))
     datetime.strftime("%a")
   end
-  
+
   def extract_icon(day)
     day.dig(:weather, 0, :icon_uri)
   end
