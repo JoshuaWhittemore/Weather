@@ -1,0 +1,117 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=509%20W%2032nd%20Street,%20Vancouver,%20WA%2098660
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 27 Oct 2023 14:31:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '727'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjMxMzYwNTU0NSwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6ODMyOTY4MzQyLCJsYXQiOiI0NS42NDQ1NDM5OTk5OTk5OTYiLCJsb24iOiItMTIyLjY3NjM3NzUiLCJjbGFzcyI6ImJ1aWxkaW5nIiwidHlwZSI6InllcyIsInBsYWNlX3JhbmsiOjMwLCJpbXBvcnRhbmNlIjo5Ljk5OTk5OTk5OTk1NDQ5ZS0wNiwiYWRkcmVzc3R5cGUiOiJidWlsZGluZyIsIm5hbWUiOiIiLCJkaXNwbGF5X25hbWUiOiI1MDksIFdlc3QgMzJuZCBTdHJlZXQsIENhcnRlciBQYXJrLCBWYW5jb3V2ZXIsIENsYXJrIENvdW50eSwgV2FzaGluZ3RvbiwgOTg2NjAsIFVuaXRlZCBTdGF0ZXMiLCJhZGRyZXNzIjp7ImhvdXNlX251bWJlciI6IjUwOSIsInJvYWQiOiJXZXN0IDMybmQgU3RyZWV0Iiwic3VidXJiIjoiQ2FydGVyIFBhcmsiLCJjaXR5IjoiVmFuY291dmVyIiwiY291bnR5IjoiQ2xhcmsgQ291bnR5Iiwic3RhdGUiOiJXYXNoaW5ndG9uIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1XQSIsInBvc3Rjb2RlIjoiOTg2NjAiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn0sImJvdW5kaW5nYm94IjpbIjQ1LjY0NDUwMDAiLCI0NS42NDQ1ODgwIiwiLTEyMi42NzY0NDkwIiwiLTEyMi42NzYzMDYwIl19XQ==
+  recorded_at: Fri, 27 Oct 2023 14:31:38 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/onecall?appid=9a48e3030902fa5c8f3e224b607be7e1&exclude=minutely,hourly&lat=45.644543999999996&lon=-122.6763775&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenWeather Ruby Client/0.4.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Fri, 27 Oct 2023 14:31:39 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '6546'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/onecall?exclude=minutely%2Chourly&lat=45.64&lon=-122.68&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"lat":45.6445,"lon":-122.6764,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1698417099,"sunrise":1698417790,"sunset":1698455146,"temp":38.59,"feels_like":35.13,"pressure":1026,"humidity":94,"dew_point":37.02,"uvi":0,"clouds":100,"visibility":10000,"wind_speed":4.61,"wind_deg":320,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04n"}]},"daily":[{"dt":1698433200,"sunrise":1698417790,"sunset":1698455146,"moonrise":1698453420,"moonset":1698412380,"moon_phase":0.46,"temp":{"day":47.98,"min":37.87,"max":53.38,"night":38.07,"eve":45.82,"morn":37.89},"feels_like":{"day":45.59,"night":35.35,"eve":43.09,"morn":35.94},"pressure":1027,"humidity":58,"dew_point":33.93,"wind_speed":7.81,"wind_deg":56,"wind_gust":14.41,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"clouds":20,"pop":0,"uvi":2.28},{"dt":1698519600,"sunrise":1698504274,"sunset":1698541453,"moonrise":1698541140,"moonset":1698503640,"moon_phase":0.5,"temp":{"day":49.95,"min":32.81,"max":55.51,"night":38.17,"eve":46.8,"morn":33.31},"feels_like":{"day":49.51,"night":35.8,"eve":44.8,"morn":30.29},"pressure":1032,"humidity":31,"dew_point":19.65,"wind_speed":4.5,"wind_deg":46,"wind_gust":9.53,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":2.27},{"dt":1698606000,"sunrise":1698590758,"sunset":1698627761,"moonrise":1698629040,"moonset":1698594840,"moon_phase":0.53,"temp":{"day":51.12,"min":34.2,"max":57.07,"night":39.74,"eve":47.73,"morn":34.45},"feels_like":{"day":47.39,"night":39.74,"eve":46.56,"morn":32.04},"pressure":1029,"humidity":31,"dew_point":21.18,"wind_speed":4.29,"wind_deg":50,"wind_gust":9.71,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":2.21},{"dt":1698692400,"sunrise":1698677243,"sunset":1698714071,"moonrise":1698717420,"moonset":1698685980,"moon_phase":0.57,"temp":{"day":47.91,"min":34.95,"max":57.36,"night":42.58,"eve":53.58,"morn":36},"feels_like":{"day":47.91,"night":42.58,"eve":50.7,"morn":36},"pressure":1024,"humidity":39,"dew_point":23.79,"wind_speed":2.68,"wind_deg":36,"wind_gust":5.32,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":2.44},{"dt":1698778800,"sunrise":1698763728,"sunset":1698800382,"moonrise":1698806280,"moonset":1698776940,"moon_phase":0.6,"temp":{"day":48.4,"min":40.41,"max":55.8,"night":44.65,"eve":54.45,"morn":41.13},"feels_like":{"day":48.4,"night":44.65,"eve":51.66,"morn":41.13},"pressure":1021,"humidity":44,"dew_point":26.91,"wind_speed":2.57,"wind_deg":86,"wind_gust":3.98,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":3},{"dt":1698865200,"sunrise":1698850213,"sunset":1698886694,"moonrise":1698895680,"moonset":1698867240,"moon_phase":0.64,"temp":{"day":50.65,"min":41.04,"max":57.69,"night":49.77,"eve":55.4,"morn":41.56},"feels_like":{"day":47.62,"night":49.77,"eve":52.99,"morn":41.56},"pressure":1019,"humidity":47,"dew_point":30.96,"wind_speed":2.37,"wind_deg":65,"wind_gust":3.27,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":98,"pop":0,"uvi":3},{"dt":1698951600,"sunrise":1698936698,"sunset":1698973008,"moonrise":1698985620,"moonset":1698956940,"moon_phase":0.67,"temp":{"day":48.56,"min":46.63,"max":50.77,"night":46.63,"eve":50.77,"morn":46.89},"feels_like":{"day":48.56,"night":46.63,"eve":50.11,"morn":46.89},"pressure":1015,"humidity":98,"dew_point":47.59,"wind_speed":3.38,"wind_deg":113,"wind_gust":7.76,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"clouds":100,"pop":1,"rain":14.61,"uvi":3},{"dt":1699038000,"sunrise":1699023183,"sunset":1699059324,"moonrise":1699075860,"moonset":1699045860,"moon_phase":0.7,"temp":{"day":50.65,"min":45.59,"max":54.9,"night":49.68,"eve":52.86,"morn":46.6},"feels_like":{"day":49.41,"night":49.68,"eve":51.71,"morn":46.6},"pressure":1024,"humidity":85,"dew_point":46.06,"wind_speed":2.26,"wind_deg":146,"wind_gust":3.02,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":99,"pop":0.01,"uvi":3}],"alerts":[{"sender_name":"NWS
+        Portland (Northwest Oregon and Southwest Washington)","event":"Freeze Warning","start":1698476400,"end":1698508800,"description":"...FROST
+        ADVISORY REMAINS IN EFFECT UNTIL 9 AM PDT THIS MORNING...\n...FREEZE WARNING
+        IN EFFECT FROM MIDNIGHT TONIGHT TO 9 AM PDT\nSATURDAY...\n* WHAT...For the
+        Frost Advisory, temperatures in the mid 30s and\nwhere skies are clear will
+        result in frost formation. For the\nFreeze Warning, sub-freezing temperatures
+        as low as 32\nexpected.\n* WHERE...In Oregon, Greater Portland Metro Area.
+        In Washington,\nGreater Vancouver Area.\n* WHEN...For the Frost Advisory,
+        until 9 AM PDT this morning.\nFor the Freeze Warning, from midnight tonight
+        to 9 AM PDT\nSaturday.\n* IMPACTS...Frost and freeze conditions will kill
+        crops and\nother sensitive vegetation if left unprotected.\n* ADDITIONAL DETAILS...East
+        winds from the Columbia River Gorge\nwill increase tonight. This will likely
+        keep Portland and\nVancouver metro near the Gorge above freezing. However
+        outlying\nareas such as the Tualatin Valley and rural Clark county are\nlikely
+        to have freezing temperatures tonight.","tags":["Extreme temperature value"]},{"sender_name":"NWS
+        Portland (Northwest Oregon and Southwest Washington)","event":"Frost Advisory","start":1698400980,"end":1698422400,"description":"...FROST
+        ADVISORY REMAINS IN EFFECT UNTIL 9 AM PDT THIS MORNING...\n...FREEZE WARNING
+        IN EFFECT FROM MIDNIGHT TONIGHT TO 9 AM PDT\nSATURDAY...\n* WHAT...For the
+        Frost Advisory, temperatures in the mid 30s and\nwhere skies are clear will
+        result in frost formation. For the\nFreeze Warning, sub-freezing temperatures
+        as low as 32\nexpected.\n* WHERE...In Oregon, Greater Portland Metro Area.
+        In Washington,\nGreater Vancouver Area.\n* WHEN...For the Frost Advisory,
+        until 9 AM PDT this morning.\nFor the Freeze Warning, from midnight tonight
+        to 9 AM PDT\nSaturday.\n* IMPACTS...Frost and freeze conditions will kill
+        crops and\nother sensitive vegetation if left unprotected.\n* ADDITIONAL DETAILS...East
+        winds from the Columbia River Gorge\nwill increase tonight. This will likely
+        keep Portland and\nVancouver metro near the Gorge above freezing. However
+        outlying\nareas such as the Tualatin Valley and rural Clark county are\nlikely
+        to have freezing temperatures tonight.","tags":["Extreme temperature value"]}]}'
+  recorded_at: Fri, 27 Oct 2023 14:31:39 GMT
+recorded_with: VCR 6.2.0
