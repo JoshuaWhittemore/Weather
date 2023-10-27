@@ -5,6 +5,11 @@ This repo is for a Rails app that provides the weather and forecast for location
 
 Once deployed, a user can enter a location into a form on the root page of the app to get the forecast and the weather at that location.
 
+1. Enter location
+
+![Index Page](/images/index-page.png)
+
+
 The location can be entered in several ways, including:
 * a zip code, like '01770'
 * a city & state, like "New York, New York" or "New York NY", etc.
