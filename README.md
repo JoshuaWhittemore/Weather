@@ -7,18 +7,16 @@ Once deployed, a user can enter a location into a form on the root page of the a
 
 1. Enter location
 
-![Index Page](/images/index-page.png)
-
-
-2. App returns page with current weather at location and extended forecast.
-
-![Index Page](/images/show-page.png)
-
-
 The location can be entered in several ways, including:
 * a zip code, like '01770'
 * a city & state, like "New York, New York" or "New York NY", etc.
 * a full address, like "1600 Pennsylvania Ave, Washington, D.C, 20500" etc.
+
+![Index Page](/images/index-page.png)
+
+2. App returns page with current weather at location and extended forecast.
+
+![Index Page](/images/show-page.png)
 
 ## Dependencies
 * The app was developed on Ruby 3.1.1 and Rails 7.1.1.
