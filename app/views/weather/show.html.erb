@@ -16,7 +16,7 @@
 <hr />
 
 <h3>Forecast</h3>
-<table>
+<table class="table table-bordered">
   <tr>
     <% @weather[:daily].each do |day| %>
         <%= render 'day', day: day %>
@@ -24,11 +24,7 @@
   <tr />
 <table />
 
-
-<hr />
-<%= link_to 'Find weather for a new location.', weather_index_path %>
-
-<br />
+<%= link_to 'Find weather for a new location.', weather_index_path %><br />
 
 <% if @weather_cache_hit %>
   <em>Weather data pulled from cache for place id <%= @result[:place_id] %>.</em>
