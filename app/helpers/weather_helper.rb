@@ -1,7 +1,12 @@
 module WeatherHelper
-  def extract_weekday(day)
-    datetime = DateTime.parse(day.dig(:dt))
-    datetime.strftime("%a")
+  def extract_weekday(day, timezone)
+    dt = local_datetime(day.dig(:dt), timezone)
+
+    if dt.today?
+      "Today"
+    else
+      dt.strftime("%a")
+    end
   end
 
   def extract_icon(day)
