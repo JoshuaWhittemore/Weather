@@ -24,12 +24,12 @@
   <tr />
 <table />
 
-<%= link_to 'Find weather for a new location.', weather_index_path %><br />
+<%= link_to 'Find weather for a new location.', root_path %><br />
 
 <% if @weather_cache_hit %>
-  <em>Weather data pulled from cache for place id <%= @result[:place_id] %>.</em>
+  <em>CACHED (weather data pulled from cache for place id <%= @result[:place_id] %>).</em>
 <% else %>
-  <em>Weather data _not_ pulled from cache for place id <%= @result[:place_id] %>.</em>
+  <em>LIVE (weather data _not_ pulled from cache for place id <%= @result[:place_id] %>).</em>
 <% end %>
 
 </div>

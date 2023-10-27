@@ -10,9 +10,9 @@ class WeatherController < ApplicationController
     location_text = params[:location]
 
     if (geocoder_result = LocationService.find(location_text))
-      flash[:notice] = "Location found for input '#{location_text}'."
+      flash[:notice] = "Location found for location input '#{location_text}'."
     else
-      flash[:alert] = "No valid location found for input '#{location_text}'."
+      flash[:alert] = "No valid location found for location input '#{location_text}'."
       redirect_to action: :index
       return
     end
