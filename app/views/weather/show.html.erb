@@ -1,3 +1,5 @@
+<div class="container">
+
 <h2><%= @result[:display_name] %></h2>
 
 <% now = @weather.dig(:current) %>
@@ -33,3 +35,5 @@
 <% else %>
   <em>Weather data _not_ pulled from cache for place id <%= @result[:place_id] %>.</em>
 <% end %>
+
+</div>
