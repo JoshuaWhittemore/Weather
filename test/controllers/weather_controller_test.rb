@@ -7,7 +7,7 @@ class WeatherControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show" do
-    get weather_show_url, params: { location: "Sacramento, CA" }
+    get weather_show_url, params: {location: "Sacramento, CA"}
     assert_response :success
   end
 end
