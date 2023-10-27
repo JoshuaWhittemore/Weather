@@ -19,7 +19,7 @@
 <table class="table table-bordered">
   <tr>
     <% @weather[:daily].each do |day| %>
-        <%= render 'day', day: day %>
+        <%= render 'day', day: day, timezone: @weather[:timezone] %>
     <% end %>
   <tr />
 <table />

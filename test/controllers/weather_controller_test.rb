@@ -19,7 +19,7 @@ class WeatherControllerTest < ActionDispatch::IntegrationTest
       assert_response :success
 
       assert_equal false, assigns(:weather_cache_hit)
-      assert_equal "Sacramento, Sacramento County, California, United States", 
+      assert_equal "Sacramento, Sacramento County, California, United States",
         assigns(:result)[:display_name]
       assert_equal 39.81, assigns(:weather).dig(:current, :temp)
     end

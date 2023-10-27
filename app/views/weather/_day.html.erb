@@ -1,7 +1,7 @@
 
 <td>
 <div class="col-md">
-<h4><%= extract_weekday(day) %></h4>
+<h4><%= extract_weekday(day, timezone) %></h4>
 <%= day.dig(:weather, 0, :description).humanize %><br />
 <img src=<%= "#{extract_icon(day)}"  %> ><br />
 Low <%= day.dig(:temp, :min).to_i %>°<br />
