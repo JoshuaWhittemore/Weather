@@ -73,4 +73,5 @@ group :test do
   gem "selenium-webdriver"
   gem "vcr"
   gem "webmock"
+  gem "rails-controller-testing"
 end
