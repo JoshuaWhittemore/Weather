@@ -1,5 +1,4 @@
 class WeatherService
-  # def self.get(geocoder_result)
   def self.get(result)
     if (data = Rails.cache.read(result.place_id))
       data[:cache_hit] = true

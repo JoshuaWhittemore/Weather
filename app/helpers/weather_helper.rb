@@ -1,11 +1,11 @@
 module WeatherHelper
   def extract_weekday(day, timezone)
-    dt = local_datetime(day.dig(:dt), timezone)
+    time_w_zone = day[:dt].in_time_zone(timezone)
 
-    if dt.today?
+    if today_in_time_zone?(time_w_zone)
       "Today"
     else
-      dt.strftime("%a")
+      time_w_zone.strftime("%a")
     end
   end
 
