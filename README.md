@@ -57,3 +57,4 @@ There is a lot more that could be done.  Top of mind for me would be:
 * I was pressed for time so I did not add as many comments I as normally would to make the code more comprehensible to others & myself.
 * I usually squash my commits between releases, but I did not do it this time in case someone is interested in my process.  I apologize for my commit messages, some of which are not informative.
 * Some places I used `#dig` where I was only going one layer deep and I should've used square brackets instead.
+
