@@ -78,3 +78,5 @@ group :test do
   gem "rails-controller-testing"
   gem "timecop"
 end
+
+gem "httparty", "~> 0.22.0"

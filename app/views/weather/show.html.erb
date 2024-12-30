@@ -10,6 +10,7 @@
 <img src=<%= "#{extract_icon(now)}"  %> ></br />
 
 <%= "Temperature: #{now[:temp].to_i} °F"  %><br />
+<%= "Feels like: #{now[:feels_like].to_i} °F"  %><br />
 <%= "Humidity: #{now[:humidity].to_i}%"  %><br />
 <%= "Wind: #{now[:wind_speed].to_i} mph"  %><br />
 

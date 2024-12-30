@@ -97,6 +97,7 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
+    csv (3.3.2)
     date (3.3.3)
     debug (1.8.0)
       irb (>= 1.5.0)
@@ -117,6 +118,10 @@ GEM
       activesupport (>= 6.1)
     hashdiff (1.0.1)
     hashie (5.0.0)
+    httparty (0.22.0)
+      csv
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.1)
@@ -143,6 +148,8 @@ GEM
     mini_portile2 (2.8.8)
     minitest (5.20.0)
     msgpack (1.7.2)
+    multi_xml (0.7.1)
+      bigdecimal (~> 3.1)
     multipart-post (2.3.0)
     mutex_m (0.1.2)
     net-imap (0.4.2)
@@ -280,6 +287,7 @@ DEPENDENCIES
   debug
   error_highlight (>= 0.4.0)
   geocoder
+  httparty (~> 0.22.0)
   importmap-rails
   jbuilder
   open-weather-ruby-client
